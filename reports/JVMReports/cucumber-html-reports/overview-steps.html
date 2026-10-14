@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>inkspired</td>
+      <td>12 Oct 2026, 09:44</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">org.hooks.Hooks.after(io.cucumber.java.Scenario)</td>
+              <td>4</td>
+              <td class="duration" data-value="14268475">0.014</td>
+              <td class="duration" data-value="14268475">0.049</td>
+              <td class="duration" data-value="57073900">0.057</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.hooks.Hooks.before()</td>
+              <td>4</td>
+              <td class="duration" data-value="4167972575">4.167</td>
+              <td class="duration" data-value="4167972575">6.673</td>
+              <td class="duration" data-value="16671890300">16.671</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HealthSDC.user_click_the_checkout_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1316543300">1.316</td>
+              <td class="duration" data-value="1316543300">1.316</td>
+              <td class="duration" data-value="1316543300">1.316</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HealthSDC.user_clicks_add_to_cart_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="594059800">0.594</td>
+              <td class="duration" data-value="594059800">0.594</td>
+              <td class="duration" data-value="594059800">0.594</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HealthSDC.user_scrolls_hovers_over_health_and_beauty_menu_and_click_it()</td>
+              <td>1</td>
+              <td class="duration" data-value="699037300">0.699</td>
+              <td class="duration" data-value="699037300">0.699</td>
+              <td class="duration" data-value="699037300">0.699</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HealthSDC.user_selects_bandages_product(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="404302600">0.404</td>
+              <td class="duration" data-value="404302600">0.404</td>
+              <td class="duration" data-value="404302600">0.404</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_click_and_verifies_the_amazon_pay_payment_option_and_cancel_it()</td>
+              <td>1</td>
+              <td class="duration" data-value="1538411800">1.538</td>
+              <td class="duration" data-value="1538411800">1.538</td>
+              <td class="duration" data-value="1538411800">1.538</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_click_and_verifies_the_link_pay_payment_option_and_cancel_it()</td>
+              <td>1</td>
+              <td class="duration" data-value="1656703400">1.656</td>
+              <td class="duration" data-value="1656703400">1.656</td>
+              <td class="duration" data-value="1656703400">1.656</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_click_verifies_the_apple_pay_payment_option_and_cancel_it()</td>
+              <td>1</td>
+              <td class="duration" data-value="7869105100">7.869</td>
+              <td class="duration" data-value="7869105100">7.869</td>
+              <td class="duration" data-value="7869105100">7.869</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_completes_the_payment_form()</td>
+              <td>1</td>
+              <td class="duration" data-value="30032600">0.030</td>
+              <td class="duration" data-value="30032600">0.030</td>
+              <td class="duration" data-value="30032600">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_enters_the_card_details(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="4271858800">4.271</td>
+              <td class="duration" data-value="4271858800">4.271</td>
+              <td class="duration" data-value="4271858800">4.271</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_enters_the_email_and_shipping_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="13693002400">13.693</td>
+              <td class="duration" data-value="13693002400">13.693</td>
+              <td class="duration" data-value="13693002400">13.693</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_navigates_to_home_and_kitchen()</td>
+              <td>1</td>
+              <td class="duration" data-value="2204737900">2.204</td>
+              <td class="duration" data-value="2204737900">2.204</td>
+              <td class="duration" data-value="2204737900">2.204</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_proceeds_to_checkout_change_currency_from_rupees_to_doller()</td>
+              <td>1</td>
+              <td class="duration" data-value="12316262100">12.316</td>
+              <td class="duration" data-value="12316262100">12.316</td>
+              <td class="duration" data-value="12316262100">12.316</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.HomeandPaymentSDC.user_selects_the_raptor_claw_bottle_opener_adds_the_product_to_the_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="4012802400">4.012</td>
+              <td class="duration" data-value="4012802400">4.012</td>
+              <td class="duration" data-value="4012802400">4.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.PantrySDC.i_add_the_product_to_the_cart_and_checkout()</td>
+              <td>1</td>
+              <td class="duration" data-value="1403494000">1.403</td>
+              <td class="duration" data-value="1403494000">1.403</td>
+              <td class="duration" data-value="1403494000">1.403</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.PantrySDC.i_open_the_shipping_and_returns_section()</td>
+              <td>1</td>
+              <td class="duration" data-value="546711800">0.546</td>
+              <td class="duration" data-value="546711800">0.546</td>
+              <td class="duration" data-value="546711800">0.546</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.PantrySDC.i_select_the_honey_lemon_throat_comfort_tea_product()</td>
+              <td>1</td>
+              <td class="duration" data-value="4251870400">4.251</td>
+              <td class="duration" data-value="4251870400">4.251</td>
+              <td class="duration" data-value="4251870400">4.251</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.PantrySDC.i_select_the_pantry_and_grocery_category()</td>
+              <td>1</td>
+              <td class="duration" data-value="2072138300">2.072</td>
+              <td class="duration" data-value="2072138300">2.072</td>
+              <td class="duration" data-value="2072138300">2.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.PantrySDC.i_should_fetch_and_display_the_shipping_and_returns_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="229628000">0.229</td>
+              <td class="duration" data-value="229628000">0.229</td>
+              <td class="duration" data-value="229628000">0.229</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_add_the_product_to_the_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="936341800">0.936</td>
+              <td class="duration" data-value="936341800">0.936</td>
+              <td class="duration" data-value="936341800">0.936</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_add_the_product_to_the_cart_again()</td>
+              <td>1</td>
+              <td class="duration" data-value="503549500">0.503</td>
+              <td class="duration" data-value="503549500">0.503</td>
+              <td class="duration" data-value="503549500">0.503</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_close_the_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="891481700">0.891</td>
+              <td class="duration" data-value="891481700">0.891</td>
+              <td class="duration" data-value="891481700">0.891</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_decrease_the_product_quantity_by(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="2804614900">2.804</td>
+              <td class="duration" data-value="2804614900">2.804</td>
+              <td class="duration" data-value="2804614900">2.804</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_increase_the_product_quantity_by(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="4860573700">4.860</td>
+              <td class="duration" data-value="4860573700">4.860</td>
+              <td class="duration" data-value="4860573700">4.860</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_proceed_to_checkout()</td>
+              <td>1</td>
+              <td class="duration" data-value="1642392600">1.642</td>
+              <td class="duration" data-value="1642392600">1.642</td>
+              <td class="duration" data-value="1642392600">1.642</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_remove_the_product_from_the_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="1188298600">1.188</td>
+              <td class="duration" data-value="1188298600">1.188</td>
+              <td class="duration" data-value="1188298600">1.188</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_search_for(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="378090800">0.378</td>
+              <td class="duration" data-value="378090800">0.378</td>
+              <td class="duration" data-value="378090800">0.378</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinations.ToySDC.i_select_the_street_fighter_product()</td>
+              <td>1</td>
+              <td class="duration" data-value="6734966500">6.734</td>
+              <td class="duration" data-value="6734966500">6.734</td>
+              <td class="duration" data-value="6734966500">6.734</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>29</td>
+            <td>35</td>
+            <td class="duration">2.736</td>
+            <td class="duration">16.671</td>
+            <td class="duration">1:35.779</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
