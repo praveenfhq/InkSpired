@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = "C:\\Users\\admin\\eclipse-workspace\\InkSpiredBDD\\src\\test\\resources\\FeatureFile",
 glue = {"org.hooks","org.stepdefinations"},
-tags = "@Negative",
+//tags = "@Negative",
 dryRun =false,
 plugin = {"pretty",
 		"html:C:\\Users\\admin\\eclipse-workspace\\InkSpiredBDD\\reports\\htmlreport\\inkspired.html",

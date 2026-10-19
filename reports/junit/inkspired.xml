@@ -1,21 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.839" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-19T01:39:06.045742100Z">
-<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.1" time="7.474">
-<system-out><![CDATA[
-When I search for "flower" and i select the product.........................passed
-Then I should see the message "No matches"..................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.2" time="7.632">
+<testsuite name="Cucumber" time="50.119" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-19T02:51:06.597159700Z">
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.2" time="35.669">
 <system-out><![CDATA[
 When I search for "ship" and i select the product...........................passed
 Then I should see the message "No matches"..................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.3" time="7.557">
+<testcase classname="Product search and cart functionality" name="Search for valid products and perform cart operations - #1.1" time="36.408">
+<system-out><![CDATA[
+When I search for "Street Fighter II Ryu 6" Figure" and i select the product.passed
+And I increase the product quantity by 8....................................passed
+And I add the product to the cart...........................................passed
+And I remove the product from the cart......................................passed
+And I close the cart........................................................passed
+And I decrease the product quantity by 8....................................passed
+And I add the product to the cart...........................................passed
+Then I proceed to checkout..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home &amp; Kitchen Product purchase and Payment functionality" name="Verify user add Raptor Claw Bottle Opener &amp; payment options and checkout flow" time="49.842">
+<system-out><![CDATA[
+Given User navigates to Home and Kitchen....................................passed
+When User selects the Raptor Claw Bottle Opener & adds the product to the cart.passed
+And User proceeds to checkout & change currency from rupees to Doller.......passed
+And User click & verifies the Apple Pay  payment option and cancel it.......passed
+And user click and verifies the link pay payment option and cancel it.......passed
+And user click and verifies the amazon pay payment option and cancel it.....passed
+And User enters the email and shipping details..............................passed
+And User enters the card details............................................passed
+Then User completes the payment form........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.1" time="36.305">
+<system-out><![CDATA[
+When I search for "flower" and i select the product.........................passed
+Then I should see the message "No matches"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Health and Beauty product cart functionality" name="Verify user can add 77 Bandages to the cart" time="36.393">
+<system-out><![CDATA[
+When User scrolls & hovers over Health and Beauty menu and click it.........passed
+And User selects 77 Bandages product........................................passed
+And User clicks Add to cart button..........................................passed
+Then User click the checkout button.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.3" time="33.982">
 <system-out><![CDATA[
 When I search for "milk" and i select the product...........................passed
 Then I should see the message "No matches"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Pantry and Grocery product purchase" name="View product shipping details and add tea product to cart" time="35.752">
+<system-out><![CDATA[
+When I select the Pantry and Grocery category...............................passed
+And I select the Honey Lemon Throat Comfort Tea product.....................passed
+And I open the Shipping and Returns section.................................passed
+And I should fetch and display the Shipping and Returns details.............passed
+Then I add the product to the cart and checkout.............................passed
 ]]></system-out>
 </testcase>
 </testsuite>
