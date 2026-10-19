@@ -1,9 +1,6 @@
 
 package org.stepdefinations;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-
 import org.base.BaseCls;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,41 +11,30 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ToySDC extends BaseCls {
-	Robot r;
 
-	@When("I search for {string}")
-	public void i_search_for(String product) {
+	@When("I search for {string} Figure\" and i select the product")
+	public void i_search_for_figure_and_i_select_the_product(String string) {
 
 		ToysandGames tg = new ToysandGames();
 		WebElement search = tg.getSearch();
-		passTheValues(search, product);
-	}
+		passTheValues(search, string);
+		conditionalWait(20);
+		pressTheButton(tg.getSubmit());
+		pressTheButton(tg.getToy1());
+	
+		
 
-	@When("I select the product")
-	public void i_select_the_product() throws AWTException, InterruptedException {
+	}
+	@When("I search for {string} and i select the product")
+	public void i_search_for_and_i_select_the_product(String string) {
 
 		ToysandGames tg = new ToysandGames();
-		WebElement search1 = tg.getSearch();
-
-		pressTheButton(search1);
-
-		Thread.sleep(5000);
-
-		r = new Robot();
-
-		for (int i = 0; i < 3; i++) {
-			robotTab();
-		}
-
+		WebElement search = tg.getSearch();
+		passTheValues(search, string);
+		conditionalWait(20);
+		pressTheButton(tg.getSubmit());
+	
 	}
-	@When("when the product passed into the search box then press enter")
-	public void when_the_product_passed_into_the_search_box_then_press_enter() throws AWTException {
-		
-		r = new Robot();
-		robotEnter();
-		
-	}
-
 	@When("I increase the product quantity by {int}")
 	public void i_increase_the_product_quantity_by(Integer quantity) {
 

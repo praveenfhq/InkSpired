@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.839" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-19T01:39:06.045742100Z">
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.1" time="7.474">
+<system-out><![CDATA[
+When I search for "flower" and i select the product.........................passed
+Then I should see the message "No matches"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.2" time="7.632">
+<system-out><![CDATA[
+When I search for "ship" and i select the product...........................passed
+Then I should see the message "No matches"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product search and cart functionality" name="Search with invalid product data - #1.3" time="7.557">
+<system-out><![CDATA[
+When I search for "milk" and i select the product...........................passed
+Then I should see the message "No matches"..................................passed
+]]></system-out>
+</testcase>
+</testsuite>
